@@ -1,0 +1,135 @@
+.users-list {
+    display: block;
+    text-align: left;
+    background: #faf6f6;
+    margin: 0;
+    padding: 0 5px;
+    position: absolute;
+    top: 6%;
+    left: 11%;
+    width: 35%;
+    height: 38%;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+}
+
+img.profiles-img {
+    display: inline-block;
+    margin: 3px;
+    border-radius: 50%;
+    min-width: 10px;
+    min-height: 10px;
+    max-width: 100px;
+    max-height: 100px;
+    padding: 0;
+}
+
+p.profile-detail {
+    margin: 2px 3px;
+}
+
+a.profile-detail {
+    display: block;
+    margin: 2px 3px;
+}
+
+p.profile-detail-about {
+    padding: 3px;
+    margin: 0;
+    text-align: justify;
+}
+
+a.edit-profile-button {
+    position: absolute;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    font-weight: bold;
+    left: 50%;
+    top: 3%;
+    padding: 1%;
+}
+
+.subscribers-count {
+    display: block;
+    position: absolute;
+    left: 35%;
+    top: 15%;
+    border: 1px solid;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2) inset;
+}
+
+.subscribe-count {
+    display: block;
+    position: absolute;
+    left: 51%;
+    top: 15%;
+    border: 1px solid;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2) inset;
+}
+
+.likes-count {
+    display: block;
+    position: absolute;
+    left: 67%;
+    top: 15%;
+    border: 1px solid;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2) inset;
+}
+
+.views-count {
+    display: block;
+    position: absolute;
+    left: 83%;
+    top: 15%;
+    border: 1px solid;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2) inset;
+}
+
+.profile-stat {
+    margin: 5px 0;
+    width: 95px;
+    text-align: center;
+}
+
+.statistic-fo-owner {
+    background: #faf6f6;
+    position: absolute;
+    top: 45%;
+    left: 11%;
+    width: 35%;
+    height: 50%;
+    padding: 0 5px;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+}
+
+.metric1 {
+    position: absolute;
+    top: 15%;
+    margin: 0;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.profile-wall {
+    background: #faf6f6;
+    position: absolute;
+    top: 6%;
+    left: 47%;
+    width: 42%;
+    height: 89%;
+    border: 0px solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+}

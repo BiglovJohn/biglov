@@ -1,0 +1,6 @@
+db.sqlite3
+/socialnetwork/media
+/biglov_venv
+.env
+.idea
+/migrations

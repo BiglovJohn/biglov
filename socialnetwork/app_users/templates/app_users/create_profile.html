@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание профиля</title>
+    <link type="text/css" rel="reset" href="../static/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/create.css">
+</head>
+<header>
+    <img class="logo" src="../static/img/logo.png" width="15%" height="15%" alt="Логотип">
+</header>
+<body>
+    <p class="header"></p>
+    <img class="logo" src="../static/img/logo.png" alt="Логотип">
+    <form enctype="multipart/form-data" method="post" action="/profile/create">
+        {% csrf_token %}
+        <div class="create-profile-form">
+            <p class="avatar">
+            <img src="../media/avatars/noavatar.jpg">
+            {{ profile_form.avatar }}
+            </p>
+            <ul class="personal-data">
+                <p>Ник: {{ profile_form.nick_name }}</p>
+                <p>Имя: {{ profile_form.name }}</p>
+                <p>Фамилия: {{ profile_form.last_name }}</p>
+                <p>Дата рождения: {{ profile_form.birthday }}</p>
+                <p>Пол: {{ profile_form.gender }}</p>
+            </ul>
+            <ul class="contact-data">
+                <p>Электронная почта: {{ profile_form.email }}</p>
+                <p>Номер телефона: {{ profile_form.phone_number }}</p>
+                <p>Страница ВК: {{ profile_form.vk_account }}</p>
+                <p>Аккаунт Телеграм{{ profile_form.tg_account }}</p>
+            </ul>
+            <ul class="location-data">
+                <p>Страна: {{ profile_form.country }}</p>
+                <p>Город: {{ profile_form.city }}</p>
+            </ul>
+            <p class="about">Дополнительная информация:</p>
+            <article class="about-text">{{ profile_form.about }}</article>
+
+        <button class="save-button" type="submit">Сохранить</button>
+        <a class="exit-button" href="/profiles">Выйти</a>
+
+        </div>
+    </form>
+</body>
+<footer>
+    {% if request.user.is_authenticated %}
+        <a href="/profile/create"><img class="menu-camera" src="../static/img/ico/camera.svg"></a>
+        <a href="/profile/create"><img class="create-profile" src="../static/img/ico/plus.svg"></a>
+        <a href="/logout"><img class="logout" src="../static/img/ico/exit.svg"></a>
+        <a href="../profiles"><img class="notifications" src="../static/img/ico/bell.svg"></a>
+        <a href="../profiles"><img class="calendar" src="../static/img/ico/calendar.svg"></a>
+        <a href="../profiles"><img class="messages" src="../static/img/ico/send.svg"></a>
+        <a href="../profiles"><img class="groups" src="../static/img/ico/group.svg"></a>
+        {% for profile in profiles %}
+                <a href="/profile/{{ profile.id }}"><img class="profile" src="../media/{{ profile.avatar }}"></a>
+        {% endfor %}
+    {% else %}
+        <a href="../profiles"><img class="back" src="../static/img/ico/back.svg"></a>
+        <a href="/profile/create"><img class="create-profile" src="../static/img/ico/plus.svg"></a>
+        <a href="/"><img class="logout" src="../static/img/ico/exit.svg"></a>
+        <a href="/"><img class="notifications" src="../static/img/ico/bell.svg"></a>
+        <a href="/"><img class="calendar" src="../static/img/ico/calendar.svg"></a>
+        <a href="/"><img class="messages" src="../static/img/ico/send.svg"></a>
+        <a href="/"><img class="groups" src="../static/img/ico/group.svg"></a>
+    {% endif %}
+</footer>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>{{ profile.nick_name }}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+    <link type="text/css" rel="reset" href="../static/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/stylesheet.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/profile_page.css">
+</head>
+<header>
+    <img class="logo" src="../static/img/logo.png" width="15%" height="15%" alt="Логотип">
+</header>
+<body>
+    <p class="header"></p>
+    <a href="/">
+        <img class="menu-camera" src="../static/img/ico/camera.svg" alt="Выложить фото">
+    </a>
+    <img class="logo" src="../static/img/logo.png" alt="Логотип">
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {% if request.user %}
+        <ul class="users-list">
+            <a class="edit-profile-button" href="{{ request.user.id }}/edit">Редактировать профиль</a>
+            <aside class="subscribers-count">
+                <p class="profile-stat">Подписчиков</p>
+                <p class="profile-stat">100.000.000</p>
+            </aside>
+            <aside class="subscribe-count">
+                <p class="profile-stat">Подписок</p>
+                <p class="profile-stat">1</p>
+            </aside>
+            <aside class="likes-count">
+                <p class="profile-stat">Лайков</p>
+                <p class="profile-stat">1.000.000.000</p>
+            </aside>
+            <aside class="views-count">
+                <p class="profile-stat">Просмотров</p>
+                <p class="profile-stat">1.000.000.000</p>
+            </aside>
+            {% if profile.avatar %}
+                <img class="profiles-img" src="../media/{{ profile.avatar }}" width=100px height=100px>
+            {% else %}
+                <img class="profiles-img" src="../media/avatars/noavatar.jpg">
+            {% endif %}
+            <div>
+                <p class="profile-detail">{{ profile.name }} {{ profile.last_name }}</p>
+                <p class="profile-detail">{{ profile.birthday }}</p>
+                <p class="profile-detail">{{ profile.email }}</p>
+                <p class="profile-detail">{{ profile.phone_number }}</p>
+                <a class="profile-detail" href="{{ profile.vk_account }}">{{ profile.vk_account }}</a>
+                <a class="profile-detail" href="https://t.me/{{ profile.tg_account }}">{{ profile.tg_account }}</a>
+                <p class="profile-detail">{{ profile.country }}, {{ profile.city }}</p>
+            </div>
+                <p class="profile-detail-about">{{ profile.about }}</p>
+        {% else %}
+            <p>Нет такого пользователя</p>
+        {% endif %}
+        </ul>
+    </form>
+    <aside class="statistic-fo-owner">
+        <img class="metric1" src="../static/img/metrics_demo.png">
+    </aside>
+    <aside class="profile-wall">
+        <p class="posts">ЛЕНТА ФОТОГРАФИЙ</p>
+    </aside>
+</body>
+<footer>
+    {% if request.user.is_authenticated %}
+        <a href="/profile/create"><img class="create-profile" src="../static/img/ico/plus.svg"></a>
+        <a href="/logout"><img class="logout" src="../static/img/ico/exit.svg"></a>
+        <a href="../profiles"><img class="notifications" src="../static/img/ico/bell.svg"></a>
+        <a href="../profiles"><img class="calendar" src="../static/img/ico/calendar.svg"></a>
+        <a href="../profiles"><img class="messages" src="../static/img/ico/send.svg"></a>
+        <a href="../profiles"><img class="groups" src="../static/img/ico/group.svg"></a>
+    {% else %}
+        <a href="/profile/create"><img class="create-profile" src="../static/img/ico/plus.svg"></a>
+        <a href="/"><img class="logout" src="../static/img/ico/exit.svg"></a>
+        <a href="/"><img class="notifications" src="../static/img/ico/bell.svg"></a>
+        <a href="/"><img class="calendar" src="../static/img/ico/calendar.svg"></a>
+        <a href="/"><img class="messages" src="../static/img/ico/send.svg"></a>
+        <a href="/"><img class="groups" src="../static/img/ico/group.svg"></a>
+    {% endif %}
+</footer>
+</html>

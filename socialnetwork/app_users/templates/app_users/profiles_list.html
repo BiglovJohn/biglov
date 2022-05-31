@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link type="text/css" rel="reset" href="../static/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/stylesheet.css">
+    {% csrf_token %}
+</head>
+
+{% block content %}
+
+<body class="profiles">
+    <p class="header"></p>
+    <a href="/">
+        <img class="menu-camera" src="../static/img/ico/camera.svg" alt="Выложить фото">
+    </a>
+    <img class="logo" src="../static/img/logo.png" alt="Логотип">
+    {% if profiles %}
+    <ul class="users-list">
+        {% for profile in profiles %}
+            {% if profile.avatar %}
+                <a href="/profile/{{ profile.id }}">
+                    <img class="profiles-img" src="../media/{{ profile.avatar }}">
+                </a>
+                <p class="profiles-nick"><a href="/profile/{{ profile.id }}">{{ profile.nick_name }}</a></p>
+            {% else %}
+                <a href="/profile/{{ profile.id }}">
+                    <img class="profiles-img" src="../media/avatars/noavatar.jpg">
+                </a>
+                <p class="profiles-nick"><a href="/profile/{{ profile.id }}">{{ profile.nick_name }}</a></p>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>Пользователей нет</p>
+    {% endif %}
+    <main class="wall">
+        {% for profile in profiles %}
+            <div class="wall-sections">
+                <a href="/profile/{{ profile.id }}"><img class="post-avatar" src="../media/{{ profile.avatar }}"></a>
+                <a href="/profile/{{ profile.id }}">{{ profile.nick_name }}</a>
+                <img class="wall-img" src="../media/{{ profile.avatar }}">
+                <aside class="wall-photo-description">What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
+                    printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                    dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                    make a type specimen book. It has survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.</aside>
+            </div>
+        {% endfor %}
+    </main>
+    <aside class="market">
+        <a class="lk" href="https://t.me/Biglov_bot">Biglov_Chat_Bot<img class="market-img" src="../static/img/biglov_chat_bot.jfif"></a>
+        <a class="lk" href="https://t.me/Biglov_bot">Biglov_Chat_Bot<img class="market-img" src="../static/img/biglov_chat_bot.jfif"></a>
+        <a class="lk" href="https://t.me/Biglov_bot">Biglov_Chat_Bot<img class="market-img" src="../static/img/biglov_chat_bot.jfif"></a>
+    </aside>
+</body>
+
+{% endblock content %}
+
+<footer>
+    {% if request.user.is_authenticated %}
+        <a href="/profile/create"><img class="create-profile" src="../static/img/ico/plus.svg"></a>
+        <a href="/logout"><img class="logout" src="../static/img/ico/exit.svg"></a>
+        <a href="../profiles"><img class="notifications" src="../static/img/ico/bell.svg"></a>
+        <a href="../profiles"><img class="calendar" src="../static/img/ico/calendar.svg"></a>
+        <a href="../profiles"><img class="messages" src="../static/img/ico/send.svg"></a>
+        <a href="../profiles"><img class="groups" src="../static/img/ico/group.svg"></a>
+        {% for profile in profiles %}
+                <a href="/profile/{{ request.user.id }}"><img class="profile" src="../media/{{ profile.avatar }}"></a>
+        {% endfor %}
+    {% else %}
+        <a href="/profile/create"><img class="create-profile" src="../static/img/ico/plus.svg"></a>
+        <a href="/logout"><img class="logout" src="../static/img/ico/exit.svg"></a>
+        <a href="/"><img class="notifications" src="../static/img/ico/bell.svg"></a>
+        <a href="/"><img class="calendar" src="../static/img/ico/calendar.svg"></a>
+        <a href="/"><img class="messages" src="../static/img/ico/send.svg"></a>
+        <a href="/"><img class="groups" src="../static/img/ico/group.svg"></a>
+    {% endif %}
+</footer>
+    <aside class="advertisement">
+        <a href=""><img class="advertisement-img" src="../static/img/advertisement.jpg"></a>
+        <a href=""><img class="advertisement-img" src="../static/img/advertisement.jpg"></a>
+    </aside>
+</html>

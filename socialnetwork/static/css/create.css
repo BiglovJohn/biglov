@@ -1,0 +1,243 @@
+html {
+    width: 80%;
+    height: 100%;
+    padding: 0 10% 0 10%;
+    background: #bacac0;
+}
+
+body {
+    background: #e2e3d7;
+    height: 100%;
+    margin: 0px;
+}
+
+form {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+}
+
+.header {
+    display: block;
+    text-align: left;
+}
+
+p.header {
+    display: block;
+    position: absolute;
+    background: #faf6f6;
+    left: 11%;
+    top: 0;
+    width: 78%;
+    height: 5%;
+    border: 0px solid;
+    border-radius: 0 0 15px 15px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.1em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: right;
+    margin: 0;
+    position: absolute;
+    top: 6%;
+    left: 75%;
+    font-size: 1em;
+}
+
+div.create-profile-form {
+    display: block;
+    text-align: right;
+    position: absolute;
+    left: 25%;
+    top: 5.5%;
+    width: 50%;
+    height: 90%;
+    margin: 0 auto;
+    padding: 0.5% 0.5% 0.5% 0.5%;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+}
+
+main.wall {
+    background: #faf6f6;
+    display: block;
+    position: absolute;
+    left: 23%;
+    top: 6%;
+    height: 87%;
+    width: 47.8%;
+    overflow: auto;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+}
+
+footer {
+    padding: 0 1% 0 0;
+}
+
+img.menu-camera {
+    position: absolute;
+    left: 20%;
+    top: 1%;
+    width: 2%;
+}
+
+img.notifications {
+    position: absolute;
+    left: 24%;
+    top: 1%;
+    width: 2%;
+}
+
+img.messages {
+    position: absolute;
+    left: 28%;
+    top: 1%;
+    width: 2%;
+}
+
+img.logout {
+    position: absolute;
+    left: 78%;
+    top: 1%;
+    width: 2%;
+}
+
+img.create-profile {
+    position: absolute;
+    left: 75%;
+    top: 1%;
+    width: 2%;
+}
+
+img.calendar {
+    position: absolute;
+    left: 72%;
+    top: 1%;
+    width: 2%;
+}
+
+img.groups {
+    position: absolute;
+    left: 69%;
+    top: 1%;
+    width: 2%;
+}
+
+img.back {
+    position: absolute;
+    bottom: 2%;
+    left: 12%;
+    width: 2%;
+}
+
+img.logo {
+    position: absolute;
+    left: 45%;
+    width: 150px;
+    height: 40px;
+}
+
+ul.personal-data {
+    margin: 2px;
+    padding: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+}
+
+ul.contact-data {
+    margin: 2px;
+    padding: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+}
+
+ul.location-data {
+    margin: 2px;
+    padding: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+}
+
+p.about {
+    margin: 2px;
+    padding: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+    text-align: center;
+}
+
+p.avatar {
+    margin: 2px;
+    padding: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+}
+
+article.about-text {
+    margin: 2px;
+    padding: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+}
+
+p.submit-buttons {
+    margin: 2px;
+    padding: 1%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(34, 60, 80, 0.2);
+    background: #faf6f6;
+}
+
+textarea#id_about {
+    display: block;
+    margin: 0 auto;
+    min-width: 95%;
+    min-height: 140px;
+    max-width: 95%;
+    max-height: 140px;
+    border: 0px;
+    padding: 1px 2px;
+}
+
+input[type="text" i] {
+    border: none;
+}
+
+input[type="url" i] {
+    border: none;
+}
+
+input[type="email" i] {
+    border: none;
+}
+
+a.exit-button {
+    font-family: none;
+    border-radius: 3px;
+    padding: 0.5%;
+    vertical-align: middle;
+    text-decoration: none;
+    color: black;
+}
+
+button.save-button {
+    border: none;
+    background: none;
+    font-size: unset;
+    vertical-align: middle;
+    font-family: none;
+}
